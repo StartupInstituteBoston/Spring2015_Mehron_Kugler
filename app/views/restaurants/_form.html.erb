@@ -1,0 +1,16 @@
+<!-- new.html.erb -->
+<div class="row">
+<%= form_for @restaurant do |f| %>
+  <% if !@restaurant.errors.empty? %>
+    <% @restaurants.errors.full_message.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+
+  <% end %>
+  <p>Name: <%= f.text_field :name %></p>
+  <p>Address: <%= f.text_field :address %></p>
+  <p>Phone number: <%= f.text_field :phone %></p>
+  <p>Description: <%= f.text_field :description, class: "small-6 columns" %></p>
+  <p><%= f.submit "Add/Update this Restaurant", class: "button success" %></p>
+<% end %>
+</div>

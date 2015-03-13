@@ -1,0 +1,24 @@
+<!-- index.html.erb -->
+<div class="row">
+<div class="small-12 columns">
+  <style>
+  p.button a, span a {
+    color: white;
+  }
+  </style>
+<h1>Restaurants</h1>
+
+<% @restaurants.each do |venue| %>
+<div class="panel">
+<ul style="list-style: none;">
+  <li>Name: <%= venue.name %></li>
+  <li>Address: <%= venue.address %> </li>
+  <li>Phone: <%= venue.phone %> </li>
+  <li>Description: <%= venue.description %></li>
+</ul>
+<p><%= link_to "See/Edit Details", venue, class: 'button' %></p>
+</div>
+<% end %>
+
+<p><%= link_to "Add Restaurant", new_restaurant_path, class: 'button success' %></p>
+</div>
